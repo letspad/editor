@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{239D6A37-A1E8-4882-A068-D95EC7817C10}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Letspad</RootNamespace>
+    <AssemblyName>Letspad</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.AvalonEdit">
+      <HintPath>..\packages\AvalonEdit.4.3.1.9430\lib\Net40\ICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="Roslyn.Compilers">
+      <HintPath>..\packages\Roslyn.Compilers.Common.1.2.20906.2\lib\net45\Roslyn.Compilers.dll</HintPath>
+    </Reference>
+    <Reference Include="Roslyn.Compilers.CSharp">
+      <HintPath>..\packages\Roslyn.Compilers.CSharp.1.2.20906.2\lib\net45\Roslyn.Compilers.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Roslyn.Compilers.VisualBasic">
+      <HintPath>..\packages\Roslyn.Compilers.VisualBasic.1.2.20906.2\lib\net45\Roslyn.Compilers.VisualBasic.dll</HintPath>
+    </Reference>
+    <Reference Include="Roslyn.Services">
+      <HintPath>..\packages\Roslyn.Services.Common.1.2.20906.2\lib\net45\Roslyn.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Roslyn.Services.CSharp">
+      <HintPath>..\packages\Roslyn.Services.CSharp.1.2.20906.2\lib\net45\Roslyn.Services.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Roslyn.Services.VisualBasic">
+      <HintPath>..\packages\Roslyn.Services.VisualBasic.1.2.20906.2\lib\net45\Roslyn.Services.VisualBasic.dll</HintPath>
+    </Reference>
+    <Reference Include="Roslyn.Utilities">
+      <HintPath>..\packages\Roslyn.Services.Common.1.2.20906.2\lib\net45\Roslyn.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.0.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.0.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Expression">
+      <HintPath>..\packages\AvalonDock.2.0.2000\lib\net40\Xceed.Wpf.AvalonDock.Themes.Expression.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.0.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.0.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.0.0\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.2.0.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Commands\ComplitionItem.cs" />
+    <Compile Include="Commands\SemanticModelDemoCommand.cs" />
+    <Compile Include="Commands\TogglePropertyGridCommand.cs" />
+    <Compile Include="Commands\ToggleReplCommand.cs" />
+    <Compile Include="Commands\ToggleSyntaxAnalysisCommand.cs" />
+    <Compile Include="Commands\ZoomInCommand.cs" />
+    <Compile Include="Commands\ZoomOutCommand.cs" />
+    <Compile Include="Services\DocumentTextService.cs" />
+    <Compile Include="Services\RibbonService.cs" />
+    <Compile Include="ToolWindows\PropertyGrid\PropertyGridVM.cs" />
+    <Compile Include="ToolWindows\PropertyGrid\PropertyGrid.xaml.cs">
+      <DependentUpon>PropertyGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindows\REPL\ReplScriptModel.cs" />
+    <Compile Include="ToolWindows\REPL\ReplVM.cs" />
+    <Compile Include="ToolWindows\REPL\Repl.xaml.cs">
+      <DependentUpon>Repl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindows\SolutionExplorer\SolutionExplorerVM.cs" />
+    <Compile Include="ToolWindows\SolutionExplorer\SolutionItem.cs" />
+    <Compile Include="ToolWindows\SolutionExplorer\SolutionExplorer.xaml.cs">
+      <DependentUpon>SolutionExplorer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindows\SyntaxAnalysis\SyntaxAnalysisVM.cs" />
+    <Compile Include="ToolWindows\SyntaxAnalysis\SyntaxAnalysis.xaml.cs">
+      <DependentUpon>SyntaxAnalysis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindows\SyntaxAnalysis\SyntaxNodeVM.cs" />
+    <Page Include="Documents\TextDocument.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\ClipboardCopyCommand.cs" />
+    <Compile Include="Commands\ClipboardCutCommand.cs" />
+    <Compile Include="Commands\ClipboardPasteCommand.cs" />
+    <Compile Include="Commands\DocumentCloseCommand.cs" />
+    <Compile Include="Commands\ExitApplicationCommand.cs" />
+    <Compile Include="Commands\WrappedCommand.cs" />
+    <Compile Include="Commands\NewDocumentCommand.cs" />
+    <Compile Include="Commands\OpenDocumentCommand.cs" />
+    <Compile Include="Commands\SaveAsCommand.cs" />
+    <Compile Include="Commands\SaveCommand.cs" />
+    <Compile Include="Documents\TextDocument.xaml.cs">
+      <DependentUpon>TextDocument.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\TextDocumentVM.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ToolWindows\PropertyGrid\PropertyGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ToolWindows\REPL\Repl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ToolWindows\SolutionExplorer\SolutionExplorer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ToolWindows\SyntaxAnalysis\SyntaxAnalysis.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainWindowVM.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="StartUp.csx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AlignCenter_16x16.png" />
+    <Resource Include="Images\AlignLeft_16x16.png" />
+    <Resource Include="Images\AlignRight_16x16.png" />
+    <Resource Include="Images\Bold_16x16.png" />
+    <Resource Include="Images\BordersAndShading_16x16.png" />
+    <Resource Include="Images\Borders_16x16.png" />
+    <Resource Include="Images\BottomBorder_16x16.png" />
+    <Resource Include="Images\Bullets_16x16.png" />
+    <Resource Include="Images\ChooseColor_16x16.png" />
+    <Resource Include="Images\ClearFormatting_16x16.png" />
+    <Resource Include="Images\Close_16x16.png" />
+    <Resource Include="Images\ColorPalette.png" />
+    <Resource Include="Images\Color_16x16.png" />
+    <Resource Include="Images\ConnectionManager_48x48.png" />
+    <Resource Include="Images\Copy_16x16.png" />
+    <Resource Include="Images\Cut_16x16.png" />
+    <Resource Include="Images\DecreaseIndent_16x16.png" />
+    <Resource Include="Images\Default_16x16.png" />
+    <Resource Include="Images\DiagonalDownBorder_16x16.png" />
+    <Resource Include="Images\DiagonalUpBorder_16x16.png" />
+    <Resource Include="Images\Document_16x16.png" />
+    <Resource Include="Images\DownArrow_16x16.png" />
+    <Resource Include="Images\DownArrow_32x32.png" />
+    <Resource Include="Images\DrawTable_16x16.png" />
+    <Resource Include="Images\EditRedo_16x16.png" />
+    <Resource Include="Images\EditUndo_16x16.png" />
+    <Resource Include="Images\Erase_16x16.png" />
+    <Resource Include="Images\Find_16x16.png" />
+    <Resource Include="Images\Find_32x32.png" />
+    <Resource Include="Images\FolderClosed_48x48.png" />
+    <Resource Include="Images\FontColor_16x16.png" />
+    <Resource Include="Images\FontScript_16x16.png" />
+    <Resource Include="Images\Font_16x16.png" />
+    <Resource Include="Images\Font_32x32.png" />
+    <Resource Include="Images\Forecolor_16x16.png" />
+    <Resource Include="Images\FormatPainter_16x16.png" />
+    <Resource Include="Images\GoTo_16x16.png" />
+    <Resource Include="Images\Help_16x16.png" />
+    <Resource Include="Images\Highlight_16x16.png" />
+    <Resource Include="Images\IncreaseIndent_16x16.png" />
+    <Resource Include="Images\InsideBorders_16x16.png" />
+    <Resource Include="Images\InsideHorizontalBorder_16x16.png" />
+    <Resource Include="Images\InsideVerticalBorder_16x16.png" />
+    <Resource Include="Images\Italic_16x16.png" />
+    <Resource Include="Images\Justify_16x16.png" />
+    <Resource Include="Images\LeftArrow_32x32.png" />
+    <Resource Include="Images\LeftBorder_16x16.png" />
+    <Resource Include="Images\LineColor_16x16.png" />
+    <Resource Include="Images\LineSpacing_16x16.png" />
+    <Resource Include="Images\Minus_32x32.png" />
+    <Resource Include="Images\MultilevelList_16x16.png" />
+    <Resource Include="Images\NewDocument_16x16.png" />
+    <Resource Include="Images\NewPermission_32x32.png" />
+    <Resource Include="Images\NoBorder_16x16.png" />
+    <Resource Include="Images\Numbering_16x16.png" />
+    <Resource Include="Images\Open_16x16.png" />
+    <Resource Include="Images\Options_16x16.png" />
+    <Resource Include="Images\OuterBorders_16x16.png" />
+    <Resource Include="Images\ParagraphSpacing_16x16.png" />
+    <Resource Include="Images\Paragraph_16x16.png" />
+    <Resource Include="Images\Paragraph_32x32.png" />
+    <Resource Include="Images\Paste_16x16.png" />
+    <Resource Include="Images\Paste_32x32.png" />
+    <Resource Include="Images\Plus_32x32.png" />
+    <Resource Include="Images\Printer_48x48.png" />
+    <Resource Include="Images\PrintPreview_16x16.png" />
+    <Resource Include="Images\Print_16x16.png" />
+    <Resource Include="Images\PublishPlan_16x16.png" />
+    <Resource Include="Images\RefreshArrow_32x32.png" />
+    <Resource Include="Images\Replace_16x16.png" />
+    <Resource Include="Images\RightArrow_32x32.png" />
+    <Resource Include="Images\RightBorder_16x16.png" />
+    <Resource Include="Images\Save_16x16.png" />
+    <Resource Include="Images\SelectionPane_16x16.png" />
+    <Resource Include="Images\Select_16x16.png" />
+    <Resource Include="Images\SendLinkByEmail_32x32.png" />
+    <Resource Include="Images\Shading_16x16.png" />
+    <Resource Include="Images\ShowGridlines_16x16.png" />
+    <Resource Include="Images\ShowHide_16x16.png" />
+    <Resource Include="Images\Sort_16x16.png" />
+    <Resource Include="Images\StylesGroup.png" />
+    <Resource Include="Images\Styles_32x32.png" />
+    <Resource Include="Images\Table_32x32.png" />
+    <Resource Include="Images\ThemeFonts.png" />
+    <Resource Include="Images\Tick_32x32.png" />
+    <Resource Include="Images\TopBorder_16x16.png" />
+    <Resource Include="Images\UpArrow_16x16.png" />
+    <Resource Include="Images\UpArrow_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{D41D8B59-BC98-4C84-BAE4-71FC4EC75EED}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Open_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\New_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\SaveAs_32x32.png" />
+    <Resource Include="Images\Save_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Exit_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ZoomIn_32x32.png" />
+    <Resource Include="Images\ZoomOut_32x32.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
